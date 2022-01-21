@@ -8,7 +8,9 @@ pipeline {
         }
         stage ('Build de docker'){
             steps{
-                sh 'docker build -t web:latest ./deploy/Dockerfile'
+                sh 'cd deploy'
+                sh 'ls -la'
+                sh 'docker build -t web:latest ./deploy/'
             }
         }
     }    
